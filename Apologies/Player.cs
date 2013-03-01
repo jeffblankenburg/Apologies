@@ -13,5 +13,11 @@ namespace Apologies
         public string Name { get; set; }
         public List<GamePiece> GamePieces { get; set; }
         public GameColor Color { get; set; }
+        public Hand Hand { get; set; }
+
+        public Player()
+        {
+            
+        }
     }
 }

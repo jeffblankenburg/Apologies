@@ -24,6 +24,16 @@ namespace Apologies
         public GameBoard()
         {
             this.InitializeComponent();
+            this.Loaded += GameBoard_Loaded;
+        }
+
+        void GameBoard_Loaded(object sender, RoutedEventArgs e)
+        {
+            double h = Board.Height;
+            double w = Board.Width;
+
+            Game g = new Game();
+            Deck d = g.Deck;
         }
 
         /// <summary>
@@ -33,6 +43,7 @@ namespace Apologies
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            
         }
     }
 }
