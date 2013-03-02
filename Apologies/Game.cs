@@ -20,11 +20,11 @@ namespace Apologies
 
             for (int i = 0; i < 5; i++)
             {
-                int counter = 4 * i;
-                Player1.Hand.Cards.Add(Deck.Cards[counter]);
-                Player2.Hand.Cards.Add(Deck.Cards[counter + 1]);
-                Player3.Hand.Cards.Add(Deck.Cards[counter + 2]);
-                Player4.Hand.Cards.Add(Deck.Cards[counter + 3]);
+                //int counter = 4 * i;
+                //Player1.Hand.Cards.Add(Deck.Cards[counter]);
+                //Player2.Hand.Cards.Add(Deck.Cards[counter + 1]);
+                //Player3.Hand.Cards.Add(Deck.Cards[counter + 2]);
+                //Player4.Hand.Cards.Add(Deck.Cards[counter + 3]);
             }
         }
     }

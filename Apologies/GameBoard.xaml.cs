@@ -24,16 +24,24 @@ namespace Apologies
         public GameBoard()
         {
             this.InitializeComponent();
-            this.Loaded += GameBoard_Loaded;
+            this.SizeChanged += GameBoard_SizeChanged;
         }
 
-        void GameBoard_Loaded(object sender, RoutedEventArgs e)
+        void GameBoard_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            double h = Board.Height;
-            double w = Board.Width;
+            ResizeBoard();
+        }
 
-            Game g = new Game();
-            Deck d = g.Deck;
+        private void ResizeBoard()
+        {
+            double w = Windows.UI.Xaml.Window.Current.Bounds.Width;
+            double h = Windows.UI.Xaml.Window.Current.Bounds.Height;
+
+            double remaining = w - h;
+
+            Left.Width = new GridLength(remaining / 2);
+            Right.Width = new GridLength(remaining / 2);
+            Center.Width = new GridLength(h);
         }
 
         /// <summary>
@@ -43,7 +51,7 @@ namespace Apologies
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            
+            ResizeBoard();
         }
     }
 }
